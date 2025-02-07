@@ -10,8 +10,9 @@ from .base import GeneratorBase
 
 
 class SSHHostsGenerator(GeneratorBase):
-    def __init__(self, devices: Sequence[Device[DefaultExtraField]]):
+    def __init__(self, devices: Sequence[Device[DefaultExtraField]], domain: str = "bone6.top"):
         super().__init__()
+        self.domain = domain
         self.devices = devices
 
     def add_host(self, host_name: str, host_domain: str, desc: str, ssh_field: SSHHostField):
@@ -27,7 +28,7 @@ class SSHHostsGenerator(GeneratorBase):
             if device.extra.ssh is None:
                 logger.warning(f"device {device} has no ssh config")
                 continue
-            domain = f"{device.get_domain()}.bone6.top"
+            domain = f"{device.get_domain()}.{self.domain}"
             self.add_host(device.get_name(), domain, device.desc, device.extra.ssh)
             logger.debug(f"added host {device.get_name()} to ssh config")
             for container in device.extra.ssh.containers:
