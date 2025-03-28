@@ -7,7 +7,7 @@ from .base import GeneratorBase
 
 
 class CaddyFileGenerator(GeneratorBase):
-    def __init__(self, services: Sequence[Service], domain: str = "bone6.top"):
+    def __init__(self, services: Sequence[Service], domain: str = "bone6.com"):
         super().__init__()
         self.services = services
         self.domain = domain

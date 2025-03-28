@@ -49,7 +49,7 @@ def generate_config(
     devices = get_devices(config["devices"], DefaultExtraField)
     generator = AnsibleHostsGenerator(devices)
     generator.write("~/.config/ansible/hosts")
-    generator = SSHHostsGenerator(devices, domain=config.get("domain", "bone6.top"))
+    generator = SSHHostsGenerator(devices, domain=config.get("domain", "bone6.com"))
     generator.write("~/.ssh/config")
     generator = DNSConfigGenerator(devices, extra_groups=groups)
     generator.write("~/.config/dns-manager/ddns.json")

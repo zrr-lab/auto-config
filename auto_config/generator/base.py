@@ -13,7 +13,7 @@ class Block:
         self._lines: list[str] = []
 
     def add_line(self, line: str = ""):
-        self._lines.append(f"{' '*self.indentation}{line}")
+        self._lines.append(f"{' ' * self.indentation}{line}")
 
     def generate(self):
         return "\n".join([self.start_line, *self._lines, self.end_line])

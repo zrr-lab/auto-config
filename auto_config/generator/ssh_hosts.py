@@ -10,7 +10,7 @@ from .base import GeneratorBase
 
 
 class SSHHostsGenerator(GeneratorBase):
-    def __init__(self, devices: Sequence[Device[DefaultExtraField]], domain: str = "bone6.top"):
+    def __init__(self, devices: Sequence[Device[DefaultExtraField]], domain: str = "bone6.com"):
         super().__init__()
         self.domain = domain
         self.devices = devices
