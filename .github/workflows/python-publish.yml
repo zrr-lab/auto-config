@@ -31,7 +31,7 @@ jobs:
         env:
           PYFUTURE_TARGET: ${{ matrix.target-version }}
       - name: Upload wheels 👷‍♂️
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: wheels
           path: dist
@@ -44,7 +44,7 @@ jobs:
       id-token: write
     steps:
       - name: Download wheels 👷‍♂️
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: wheels
           path: dist
