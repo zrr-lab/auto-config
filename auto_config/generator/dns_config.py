@@ -28,6 +28,8 @@ class DNSConfigGenerator(GeneratorBase):
         for device in self.devices:
             name = device.get_domain()
             if device.group not in self.groups:
+                if device.group not in ignored_record_list:
+                    ignored_record_list.append(device.group)
                 ignored_record_list.append(name)
                 continue
             target = device.extra.dns.public if device.extra.dns is not None else "unknown"
