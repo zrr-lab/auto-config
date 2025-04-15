@@ -8,7 +8,7 @@ from ..field import DefaultExtraField
 from .base import GeneratorBase
 
 
-class DNSConfigGenerator(GeneratorBase):
+class DNSManagerGenerator(GeneratorBase):
     def __init__(
         self,
         devices: Sequence[Device[DefaultExtraField]],

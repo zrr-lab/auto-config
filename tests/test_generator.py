@@ -5,7 +5,7 @@ import pytest
 from auto_config.generator import (
     AnsibleHostsGenerator,
     CaddyFileGenerator,
-    DNSConfigGenerator,
+    DNSManagerGenerator,
     GeneratorBase,
     SSHHostsGenerator,
 )
@@ -30,4 +30,4 @@ def test_generator_init():
     AnsibleHostsGenerator(devices).generate()
     SSHHostsGenerator(devices).generate()
     CaddyFileGenerator(devices).generate()
-    DNSConfigGenerator(devices).generate()
+    DNSManagerGenerator(devices).generate()
