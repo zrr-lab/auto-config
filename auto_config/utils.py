@@ -43,6 +43,7 @@ def generate_config(
     path: str = "~/.config/autoconfig/config.toml",
     *,
     groups: list[str] | None = None,
+    gateway_group: str | None = None,
     log_level="INFO",
 ):
     logger.remove()
@@ -59,6 +60,6 @@ def generate_config(
     generator = DNSManagerGenerator(devices, extra_groups=groups)
     # TODO: `ddns.json` is not only ddns, so we need a better name.
     generator.write("~/.config/dns-manager/ddns.json")
-    if groups is not None:
-        generator = DNSHostsGenerator(devices, group=groups[0])
+    if gateway_group is not None:
+        generator = DNSHostsGenerator(devices, group=gateway_group)
         generator.write("/var/mosdns/hosts")
