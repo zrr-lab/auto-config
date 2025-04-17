@@ -31,6 +31,6 @@ class DNSHostsGenerator(GeneratorBase):
             if device.extra.dns.private is None:
                 continue
 
-            hosts.append(f"{device.extra.dns.private} {device.get_domain()}.{self.domain}")
+            hosts.append(f"{device.get_domain()}.{self.domain} {device.extra.dns.private}")
 
         self._generated_code = "\n".join(hosts)
