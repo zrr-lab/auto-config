@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.2.2 (2025-04-17)
+
+### 🐛 fix
+
+* 🐛 fix: fix `DNSHostsGenerator` ([`a94b093`](https://github.com/zrr-lab/auto-config/commit/a94b093f5620d0a4080a7e9cc2734606795b6789))
+
 ## v0.2.1 (2025-04-17)
 
 ### 🐛 fix
