@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.2.1 (2025-04-17)
+
+### 🐛 fix
+
+* 🐛 fix: fix generate_config command ([`485e3ec`](https://github.com/zrr-lab/auto-config/commit/485e3eccf8d2b9dc6d4bf3d2594412f7af1d4b8c))
+
 ## v0.2.0 (2025-04-17)
 
 ### ✨ feat
