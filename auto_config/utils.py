@@ -40,7 +40,7 @@ def get_services(services_config: list[dict]) -> list[Service]:
 
 
 def generate_config(
-    path: str = "~/.config/autoconfig/config.toml",
+    path: str = "~/.config/auto-config/config.toml",
     *,
     groups: list[str] | None = None,
     gateway_group: str | None = None,

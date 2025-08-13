@@ -13,7 +13,7 @@ app = typer.Typer()
 
 @app.command()
 def generate_config(
-    path: str = typer.Argument("~/.config/autoconfig/config.toml"),
+    path: str = typer.Argument("~/.config/auto-config/config.toml"),
     *,
     groups: Optional[list[str]] = None,
     gateway_group: Optional[str] = None,

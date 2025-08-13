@@ -14,9 +14,13 @@
    <a href="https://gitmoji.dev"><img alt="Gitmoji" src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67?style=flat-square"></a>
 </p>
 
+## Feature
+- ansible hosts
+- ssh config
+- auto-ddns config
+- mosdns hosts config
+
+
 ## TODO
-- [x] ansible hosts
-- [x] ssh config
-- [x] auto-ddns config
 - [ ] caddyfile
-- [ ] 生成 docker compose
+- [ ] docker compose
