@@ -12,7 +12,7 @@ class DNSHostsGenerator(GeneratorBase):
         self,
         devices: Sequence[Device[DefaultExtraField]],
         group: str,
-        domain: str = "bone6.com",
+        domain: str = "sixbones.dev",
     ):
         super().__init__()
         self.devices = devices
