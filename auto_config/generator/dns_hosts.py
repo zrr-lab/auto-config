@@ -11,13 +11,13 @@ class DNSHostsGenerator(GeneratorBase):
     def __init__(
         self,
         devices: Sequence[Device[DefaultExtraField]],
+        domain: str,
         group: str,
-        domain: str = "sixbones.dev",
     ):
         super().__init__()
         self.devices = devices
-        self.group = group
         self.domain = domain
+        self.group = group
 
     def generate(self):
         hosts = []

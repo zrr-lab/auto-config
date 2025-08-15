@@ -53,13 +53,14 @@ def generate_config(
     with open(path) as f:
         config = toml.load(f)
     devices = get_devices(config["devices"], DefaultExtraField)
+    domain = config.get("domain", "sixbones.dev")
     generator = AnsibleHostsGenerator(devices)
     generator.write("~/.config/ansible/hosts")
-    generator = SSHHostsGenerator(devices, domain=config.get("domain", "bone6.com"))
+    generator = SSHHostsGenerator(devices, domain=domain)
     generator.write("~/.ssh/config")
-    generator = DNSManagerGenerator(devices, extra_groups=groups)
+    generator = DNSManagerGenerator(devices, domain=domain, extra_groups=groups)
     # TODO: `ddns.json` is not only ddns, so we need a better name.
     generator.write("~/.config/dns-manager/ddns.json")
     if gateway_group is not None:
-        generator = DNSHostsGenerator(devices, group=gateway_group)
+        generator = DNSHostsGenerator(devices, domain=domain, group=gateway_group)
         generator.write("/var/mosdns/hosts")

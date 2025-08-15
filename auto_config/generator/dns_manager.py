@@ -12,6 +12,7 @@ class DNSManagerGenerator(GeneratorBase):
     def __init__(
         self,
         devices: Sequence[Device[DefaultExtraField]],
+        domain: str,
         *,
         extra_groups: list[str] | None = None,
     ):
