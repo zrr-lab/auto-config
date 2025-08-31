@@ -18,6 +18,7 @@ class DNSManagerGenerator(GeneratorBase):
     ):
         super().__init__()
         self.devices = devices
+        self.domain = domain
         # TODO: make this configurable
         self.groups = ["default", "cloud"]
         if extra_groups is not None:
@@ -35,7 +36,7 @@ class DNSManagerGenerator(GeneratorBase):
                 continue
             target = device.extra.dns.public if device.extra.dns is not None else "unknown"
             if device.extra.ansible is not None and device.extra.ansible.server:
-                record_list.append((device.group, f"{name}.bone6.com"))
+                record_list.append((device.group, f"{name}.{self.domain}"))
             record_list.append((f"{name}", target))
 
         # TODO: make this domain configurable

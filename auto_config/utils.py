@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 from sys import stdout
 
 import toml
@@ -40,7 +41,7 @@ def get_services(services_config: list[dict]) -> list[Service]:
 
 
 def generate_config(
-    path: str = "~/.config/auto-config/config.toml",
+    path: Path,
     *,
     groups: list[str] | None = None,
     gateway_group: str | None = None,
@@ -48,8 +49,7 @@ def generate_config(
 ):
     logger.remove()
     logger.add(stdout, level=log_level)
-    path = os.path.expanduser(path)
-    path = os.path.expandvars(path)
+    path = path.expanduser()
     with open(path) as f:
         config = toml.load(f)
     devices = get_devices(config["devices"], DefaultExtraField)
